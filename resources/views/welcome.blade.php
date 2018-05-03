@@ -51,7 +51,7 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="login">Login</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="register">Registro</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="register">Registre</a>
             </li>
           </ul>
         </div>
@@ -61,10 +61,8 @@
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">
-        <h1 class="text-uppercase mb-0">am-POST</h1>
-        <hr class="star-light">
-        <h2 class="font-weight-light mb-0">Lo teu servei de missatgeria mès a prop</h2>
+        <img class="img-fluid mb-5 d-block mx-auto" src="img/logo.png" alt="">
+        <h2 class="font-weight-light mb-0">Transport de paqueteria i missatgeria a Amposta</h2>
       </div>
     </header>
 
@@ -72,7 +70,7 @@
     <section class="portfolio" id="portfolio">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Seguiment</h2>
-        <hr class="star-dark mb-5">
+        <br>
         <div class="row">
           <div class="col-md-6 col-lg-4">
             <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
@@ -142,20 +140,14 @@
     <section class="bg-primary text-white mb-0" id="about">
       <div class="container">
         <h2 class="text-center text-uppercase text-white">Nosaltres</h2>
-        <hr class="star-light mb-5">
+        <br>
         <div class="row">
           <div class="col-lg-4 ml-auto">
-            <p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+            <p class="lead">amPOST és una empresa que es dedica al transport de missatgeria i paqueteria urgent, especialitzats en e-commerce, logística i distribució.</p>
           </div>
           <div class="col-lg-4 mr-auto">
-            <p class="lead">Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+            <p class="lead">Treballem en un àmbit local, disposant en temps real de la informació de l'estat de cadascun dels enviaments. Avui dia, més de 10.000 clients confien en la nostra empresa.</p>
           </div>
-        </div>
-        <div class="text-center mt-4">
-          <a class="btn btn-xl btn-outline-light" href="#">
-            <i class="fa fa-download mr-2"></i>
-            Download Now!
-          </a>
         </div>
       </div>
     </section>
@@ -163,8 +155,8 @@
     <!-- Contact Section -->
     <section id="contact">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Contacta amb nosaltres</h2>
-        <hr class="star-dark mb-5">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Contacta'ns</h2>
+        <br>
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
