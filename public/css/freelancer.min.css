@@ -42,7 +42,7 @@ hr.star-dark {
 
 hr.star-dark:after {
   color: #2c3e50;
-
+  background-color: #fff
 }
 
 section {
@@ -262,6 +262,14 @@ header.masthead h2 {
 .floating-label-form-group {
   position: relative;
   border-bottom: 1px solid #e9ecef
+}
+
+.floating-label-form-group-m {
+  position: relative;
+}
+
+.floating-label-form-group-m:not(:first-child) {
+  padding-left: 14px;
 }
 
 .floating-label-form-group input, .floating-label-form-group textarea {
