@@ -39,10 +39,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Seguiment</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#pedidos">Comandes</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Nosaltres</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#entrada">Entrada</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="login">Login</a>
@@ -53,47 +53,59 @@
     </nav>
 
     <!-- Header -->
-    <header class="masthead bg-primary text-white text-center">
-      <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="img/logo.png" alt="">
-        <h2 class="font-weight-light mb-0">Transport de paqueteria i missatgeria a Amposta</h2>
-      </div>
-    </header>
 
-    <!-- Portfolio Grid Section -->
-    <section class="portfolio" id="portfolio">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Seguiment</h2>
+        <br>
+      </div>
+
+    <!-- Listado de pedidos -->
+    <section class="pedidos" id="pedidos">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Comandes</h2>
         <br>
         <div class="row">
           <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="img/envelope.png" alt="">
+            <?php
+            $conexion=mysqli_connect("localhost","root","alumne","users_ampost") or
+                die("Problemas con la conexión");
+
+            $registros=mysqli_query($conexion,"select id_pedidos, fecha_pedidos, destin_pedidos, direccion_pedidos, telefono_pedidos, estado_pedidos
+                                    from pedidos") or
+              die("Problemas en el select:".mysqli_error($conexion));
+
+            while ($reg=mysqli_fetch_array($registros))
+            {
+              echo "ID:".$reg['id_pedidos']."<br>";
+              echo "Fecha:".$reg['fecha_pedidos']."<br>";
+              echo "Destinatario:".$reg['destin_pedidos']."<br>";
+              echo "Dirección:".$reg['direccion_pedidos']."<br>";
+              echo "Teléfono:".$reg['telefono_pedidos']."<br>";
+              switch ($reg['estado_pedidos']) {
+                case 1:echo "PHP";
+                       break;
+                case 2:echo "ASP";
+                       break;
+                case 3:echo "JSP";
+                       break;
+              }
+              echo "<br>";
+              echo "<hr>";
+            }
+
+            mysqli_close($conexion);
+            ?>
           </div>
-          <form name="sentMessage" id="contactForm" novalidate="novalidate">
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Seguiment d'enviaments</label>
-                <input class="form-control" id="phone" type="number" placeholder="Nombre de seguiment" required="required" data-validation-required-message="Per favor, introdueix el nombre de seguiment.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-          </form>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="bg-primary text-white mb-0" id="about">
+    <!-- Entrada de pedidos -->
+    <section class="bg-primary text-white mb-0" id="entrada">
       <div class="container">
-        <h2 class="text-center text-uppercase text-white">Nosaltres</h2>
+        <h2 class="text-center text-uppercase text-white">Entrada de comandes</h2>
         <br>
         <div class="row">
-          <div class="col-lg-4 ml-auto">
-            <p class="lead">amPOST és una empresa que es dedica al transport de missatgeria i paqueteria urgent, especialitzats en e-commerce, logística i distribució.</p>
-          </div>
-          <div class="col-lg-4 mr-auto">
-            <p class="lead">Treballem en un àmbit local, disposant en temps real de la informació de l'estat de cadascun dels enviaments. Avui dia, més de 10.000 clients confien en la nostra empresa.</p>
-          </div>
+
         </div>
       </div>
     </section>
