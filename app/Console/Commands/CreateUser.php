@@ -11,7 +11,7 @@ class CreateUser extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'a:b';
 
     /**
      * The console command description.
@@ -37,6 +37,6 @@ class CreateUser extends Command
      */
     public function handle()
     {
-        //
+        dd("hola");
     }
 }
