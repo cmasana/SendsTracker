@@ -64,7 +64,7 @@
         <h2 class="text-center text-uppercase text-secondary mb-0">Comandes</h2>
         <br>
         <div class="row">
-          <div class="col-md-6 col-lg-4">
+          <div>
             <?php
             $conexion=mysqli_connect("localhost","root","alumne","users_ampost") or
                 die("Problemas con la conexión");
@@ -75,11 +75,11 @@
 
             while ($reg=mysqli_fetch_array($registros))
             {
-              echo "ID:".$reg['id_pedidos']."<br>";
-              echo "Fecha:".$reg['fecha_pedidos']."<br>";
-              echo "Destinatario:".$reg['destin_pedidos']."<br>";
-              echo "Dirección:".$reg['direccion_pedidos']."<br>";
-              echo "Teléfono:".$reg['telefono_pedidos']."<br>";
+              echo "<strong>ID:</strong> ".$reg['id_pedidos']."&nbsp;&nbsp;";
+              echo "<strong>Fecha:</strong> ".$reg['fecha_pedidos']."&nbsp;&nbsp;";
+              echo "<strong>Destinatario:</strong> ".$reg['destin_pedidos']."<br>";
+              echo "<strong>Teléfono:</strong> ".$reg['telefono_pedidos']."&nbsp;&nbsp;";
+              echo "<strong>Dirección:</strong> ".utf8_decode($reg['direccion_pedidos'])."&nbsp;&nbsp;";
               switch ($reg['estado_pedidos']) {
                 case 1:echo "PHP";
                        break;
@@ -106,6 +106,24 @@
         <br>
         <div class="row">
 
+          <form action="alta.blade.php" method="post">
+            Ingrese fecha de entrada:
+            <input type="date" name="fecha_pedidos"><br>
+            Ingrese nombre destinatario:
+            <input type="text" name="destin_pedidos"><br>
+            Ingrese teléfono:
+            <input type="number" name="telefono_pedidos"><br>
+            Ingrese dirección:
+            <input type="text" name="direccion_pedidos"><br>
+            Seleccione el estado del pedido:
+            <select name="estado_pedidos">
+              <option value="Enviado">Enviado</option>
+              <option value="Entregado">Entregado</option>
+              <option value="Cancelado">Cancelado</option>
+            </select>
+            <br>
+            <input type="submit" value="Registrar">
+          </form>
         </div>
       </div>
     </section>
