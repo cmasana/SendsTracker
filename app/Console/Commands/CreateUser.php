@@ -3,6 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class CreateUser extends Command
 {
@@ -37,6 +39,14 @@ class CreateUser extends Command
      */
     public function handle()
     {
-        dd("hola");
+      $name = $this->ask('Escribe el nombre de usuario');
+      $email = $this->ask('Introduce tu dirección de correo electrónico');
+      $password = $this->ask('Introduce tu password');
+
+      $user = new User();
+      $user->name = $name;
+      $user->email = $email;
+      $user->password = Hash::make($password);
+      $user->save();
     }
 }

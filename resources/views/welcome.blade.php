@@ -75,33 +75,7 @@
                 <label>Seguiment d'enviaments</label>
                 <input class="form-control" id="phone" type="number" placeholder="Nombre de seguiment" required="required" data-validation-required-message="Per favor, introdueix el nombre de seguiment.">
                 <p class="help-block text-danger"></p>
-                  <?php
-                    $conexion=mysqli_connect("localhost","root","alumne","users_ampost") or
-                        die("Problemas con la conexión");
-
-                    $registros=mysqli_query($conexion,"select codigo,nombre, codigocurso
-                                            from pedidos where id_pedidos=$_REQUEST[id_pedidos]") or
-                      die("Problemas en el select:".mysqli_error($conexion));
-
-                    if ($reg=mysqli_fetch_array($registros))
-                    {
-                      echo "Dirección: ".$reg['nombre']."<br>";
-                      echo "Curso: ";
-                      switch ($reg['codigocurso']) {
-                        case 1:echo "PHP";
-                               break;
-                        case 2:echo "ASP";
-                               break;
-                        case 3:echo "JSP";
-                               break;
-                      }
-                    }
-                    else
-                    {
-                      echo "No existe un alumno con ese mail.";
-                    }
-                    mysqli_close($conexion);
-                  ?>
+                
               </div>
             </div>
           </form>
